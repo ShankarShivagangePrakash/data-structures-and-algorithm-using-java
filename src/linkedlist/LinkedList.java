@@ -18,6 +18,18 @@ public class LinkedList {
         length = 1;
     }
 
+    public void printList(){
+        /* we assign the head reference to a temp variable
+         keep moving till we reach end of the linkedList,
+         means till temp = null */
+        Node temp = head;
+        while (temp != null){
+            System.out.println(temp.value);
+            // move to next element
+            temp = temp.next;
+        }
+    }
+
     // Inner class
     class Node {
         // Holds value
