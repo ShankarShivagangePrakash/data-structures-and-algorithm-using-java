@@ -165,6 +165,26 @@ public class LinkedList {
         return true;
     }
 
+    public LinkedList.Node remove(int index){
+
+        if(index < 0 || index > length){
+            return null;
+        }
+        if(index == 0){
+            return removeFirst();
+        }
+        if(index == length){
+            return deleteLast();
+        }
+
+        LinkedList.Node prev = get(index - 1);
+        Node temp = prev.next;
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }

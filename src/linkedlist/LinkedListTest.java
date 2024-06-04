@@ -69,6 +69,13 @@ public class LinkedListTest {
         System.out.println("Insert at position - in the middle" + linkedList1.insert(10, 60));
         linkedList1.printList();
 
+        System.out.println("Remove at position - beginning of the list " + linkedList1.remove(0).getValue());
+        System.out.println("Remove at position - end of the list  " + linkedList1.remove(5).getValue());
+        linkedList1.printList();
+        System.out.println("Remove at position - in the middle " + linkedList1.remove(2).getValue());
+        System.out.println("Remove at position - -1 " + linkedList1.remove(-1));
+        System.out.println("Remove at position - greater than linked list length" + linkedList1.remove(6));
+        linkedList1.printList();
 
     }
 }
