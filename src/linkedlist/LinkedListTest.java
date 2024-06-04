@@ -63,6 +63,11 @@ public class LinkedListTest {
         System.out.println("Set Element at index: 2 status " + linkedList1.set(3, 40));
 
         linkedList1.printList();
+        System.out.println("Insert at position - beginning of the list" + linkedList1.insert(0, 40));
+        System.out.println("Insert at position - end of the list " + linkedList1.insert(4, 50));
+        System.out.println("Insert at position - in the middle" + linkedList1.insert(3, 60));
+        System.out.println("Insert at position - in the middle" + linkedList1.insert(10, 60));
+        linkedList1.printList();
 
 
     }

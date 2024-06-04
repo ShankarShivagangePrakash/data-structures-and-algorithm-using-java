@@ -139,6 +139,32 @@ public class LinkedList {
         return false;
     }
 
+    public boolean insert(int index, int value){
+        if(index < 0 || (index > length)){
+            return false;
+        }
+        //Insert at the beginning
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+
+        // Insert to the end of the list.
+        if(index == length){
+            append(value);
+            return true;
+        }
+
+        // Insert in the middle
+        Node node = new Node(value);
+        // get the node before the specified index, create link between previousNode, newNode and nextNode.
+        Node temp = get(index - 1);
+        node.next = temp.next;
+        temp.next = node;
+        length++;
+        return true;
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }
