@@ -42,6 +42,17 @@ public class LinkedListTest {
         LinkedList.Node deletedNode5 = linkedList1.removeFirst();
         System.out.println("Element deleted: "  + ((deletedNode5 != null) ? deletedNode5.getValue() : deletedNode5));
 
+        linkedList1.append(2);
+        linkedList.printList();
+        linkedList1.printList();
+
+        System.out.println("Element at index: -1 is "  + linkedList.get(-1));
+        System.out.println("Element at index: 1 is "  + linkedList.get(1));
+        System.out.println("Element at index: 0 is "  + linkedList.get(0));
+        LinkedList.Node getNode = linkedList1.get(0);
+        LinkedList.Node getNode1 = linkedList1.get(1);
+        System.out.println("Element at index: 0 is "  + ((getNode != null) ? getNode.getValue() : getNode));
+        System.out.println("Element at index: 1 is "  + ((getNode1 != null) ? getNode1.getValue() : getNode1));
 
 
     }

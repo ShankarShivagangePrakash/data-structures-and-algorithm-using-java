@@ -114,6 +114,22 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index){
+        // for negative index or for index greater than or equal to size of linked list return null
+        // Note: index starts from zero - just like arrays.
+        if(index < 0 || (index >= length)){
+            return null;
+        }
+
+        Node temp = head;
+        // iterate index number of times, to get element at index position.
+        for(int i = 0; i < index; i++){
+            temp = temp.next;
+        }
+        return  temp;
+
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }
