@@ -43,6 +43,42 @@ public class LinkedList {
         }
     }
 
+    public Node deleteLast(){
+        // If linked list length is zero, we cannot delete any element, return null.
+        // alternatively, you can achieve the same thing using if (head == null && tail == null)
+        if(length == 0) return  null;
+
+        Node pre = head;
+        Node temp = head;
+
+        // keep assigning current node reference to pre and move temp node to next node.
+        while(temp.next != null){
+            pre = temp;
+            temp = temp.next;
+        }
+        /* Once temp node reaches to the end of the list,
+         pre will be pointing to last but one element in the list,
+         assign pre to tail.
+         pre.next to null - since now it acts as a last element in the list and reduce the count: length--.*/
+        tail = pre;
+        pre.next = null;
+        length--;
+
+        /* corner case.
+         when list has only one element above while loop doesn't execute and
+         tail, head, pre, temp all will be pointing to first element in the list
+         but length will be decremented and will be zero.
+         In such scenario, we need to set head and tail to null to clean the linkedList */
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
+
+        //Return the deleted node.
+        return  temp;
+
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }
@@ -79,6 +115,10 @@ public class LinkedList {
 
         Node(int value){
             this.value = value;
+        }
+
+        public int getValue(){
+            return this.value;
         }
     }
 
