@@ -95,6 +95,25 @@ public class LinkedList {
         length++;
     }
 
+    public LinkedList.Node removeFirst(){
+        // empty list return null
+        if(length == 0) return null;
+
+        // assign temp = head
+        // head = head.next; -- next element becomes the head
+        // return head;
+
+        LinkedList.Node temp = head;
+        head = head.next;
+        length--;
+
+        // if there was only one element in the list,
+        // after removal head will be null, we need to point tail to null as well, since the list is empty.
+        if(length == 0) tail = head;
+
+        return temp;
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }

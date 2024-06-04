@@ -29,5 +29,20 @@ public class LinkedListTest {
         linkedList.printList();
         linkedList1.printList();
 
+        // removeFirst from linked list which has only one element 1
+        LinkedList.Node deletedNode3 = linkedList.removeFirst();
+        System.out.println("Element deleted: "  + ((deletedNode3 != null) ? deletedNode3.getValue() : deletedNode3));
+
+        linkedList.getLength();
+        // removeFirst from linked list which has no element
+        LinkedList.Node deletedNode4 = linkedList.removeFirst();
+        System.out.println("Element deleted: "  + ((deletedNode4 != null) ? deletedNode4.getValue() : deletedNode4));
+
+        // removeFirst from linked list which has more one element 1
+        LinkedList.Node deletedNode5 = linkedList1.removeFirst();
+        System.out.println("Element deleted: "  + ((deletedNode5 != null) ? deletedNode5.getValue() : deletedNode5));
+
+
+
     }
 }
