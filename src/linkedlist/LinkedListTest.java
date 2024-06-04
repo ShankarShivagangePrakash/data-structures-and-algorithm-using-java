@@ -43,6 +43,7 @@ public class LinkedListTest {
         System.out.println("Element deleted: "  + ((deletedNode5 != null) ? deletedNode5.getValue() : deletedNode5));
 
         linkedList1.append(2);
+        linkedList1.append(3);
         linkedList.printList();
         linkedList1.printList();
 
@@ -53,6 +54,15 @@ public class LinkedListTest {
         LinkedList.Node getNode1 = linkedList1.get(1);
         System.out.println("Element at index: 0 is "  + ((getNode != null) ? getNode.getValue() : getNode));
         System.out.println("Element at index: 1 is "  + ((getNode1 != null) ? getNode1.getValue() : getNode1));
+
+        System.out.println("Set Element at index: -1 status " + linkedList1.set(-1, -1));
+        System.out.println("Set Element at index: 0 status " + linkedList1.set(0, 10));
+        System.out.println("Set Element at index: 1 status " + linkedList1.set(1, 20));
+        System.out.println("Set Element at index: 2 status " + linkedList1.set(2, 30));
+        // greater than array length - so will not update
+        System.out.println("Set Element at index: 2 status " + linkedList1.set(3, 40));
+
+        linkedList1.printList();
 
 
     }
