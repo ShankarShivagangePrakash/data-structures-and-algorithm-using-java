@@ -185,6 +185,37 @@ public class LinkedList {
         return temp;
     }
 
+    public void reverse(){
+        // Reverse head and tail using temp
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        // if linked list is of size 0 then don't do anything just skip
+        if(length == 0){
+            return;
+        }
+        // points to second element in the list in forward order.
+        Node after = temp.next;
+        Node before = null;
+
+        /* have three pointers,
+         before - points to previous element
+         temp - points to current element
+         after - points to next element
+         set after = temp.next
+         now point(temp.next) temp(current element) to previous element.
+         move previous to temp, before = temp
+         move temp forward, temp = after.*/
+        for(int i = 0; i < length; i++){
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }

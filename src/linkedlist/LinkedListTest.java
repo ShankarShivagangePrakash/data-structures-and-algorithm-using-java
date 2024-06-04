@@ -77,5 +77,9 @@ public class LinkedListTest {
         System.out.println("Remove at position - greater than linked list length" + linkedList1.remove(6));
         linkedList1.printList();
 
+        linkedList1.reverse();
+        //Reversed linked list
+        linkedList1.printList();
+
     }
 }
