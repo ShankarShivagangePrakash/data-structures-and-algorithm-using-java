@@ -79,6 +79,22 @@ public class LinkedList {
 
     }
 
+    public void prepend(int value){
+
+        Node node = new Node(value);
+
+        // For empty linked list, new node will become head and tail
+        if(length == 0){
+            head = node;
+            tail = node;
+        } else{
+            // assign first element to newNode.next
+            node.next = head;
+            head = node;
+        }
+        length++;
+    }
+
     public void getHead(){
         System.out.println("head of the linkedList: " + head);
     }

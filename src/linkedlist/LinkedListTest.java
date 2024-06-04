@@ -24,5 +24,10 @@ public class LinkedListTest {
         LinkedList.Node deletedNode2 = linkedList1.deleteLast();
         System.out.println("Element deleted: "  + ((deletedNode2 != null) ? deletedNode2.getValue() : deletedNode2));
 
+        linkedList.prepend(1);
+        linkedList1.prepend(0);
+        linkedList.printList();
+        linkedList1.printList();
+
     }
 }
