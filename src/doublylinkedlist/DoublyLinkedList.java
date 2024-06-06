@@ -73,5 +73,23 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public Node deleteLast(){
+        if(length == 0) return null;
 
+        Node temp = tail;
+
+        if(length == 1){
+            // in this case head and tail has to be reset.
+            head = null;
+            tail = null;
+        } else{
+            // remove link from last but one node to last node from both the nodes.
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+        length--;
+
+        return temp;
+    }
 }
