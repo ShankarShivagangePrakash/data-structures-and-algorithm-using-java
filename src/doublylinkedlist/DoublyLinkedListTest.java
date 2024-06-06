@@ -70,5 +70,10 @@ public class DoublyLinkedListTest {
 
         System.out.println("Status of setting the value 4 for index 0 " + doublyLinkedList4.set(4, 0));
         doublyLinkedList4.printList();
+
+        doublyLinkedList4.insert(0, 6);
+        doublyLinkedList4.insert(5, 1);
+        doublyLinkedList4.insert(7, -1);
+        doublyLinkedList4.printList();
     }
 }

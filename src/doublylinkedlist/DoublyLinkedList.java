@@ -152,4 +152,32 @@ public class DoublyLinkedList {
         }
         return false;
     }
+
+    public boolean insert(int index, int value){
+        if(index < 0 || index > length){
+            return false;
+        }
+
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+        if (index == length) {
+            append(value);
+            return true;
+        }
+
+        Node node = new Node(value);
+        // Have before and after node.
+        Node before = get(index - 1);
+        Node after = before.next;
+
+        // link before to new node and new node to after node.
+        node.prev = before;
+        before.next = node;
+        node.next = after;
+        after.prev = node;
+        length++;
+        return true;
+    }
 }
