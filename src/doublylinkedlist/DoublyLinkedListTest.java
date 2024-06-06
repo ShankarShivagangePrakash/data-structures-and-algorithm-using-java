@@ -67,5 +67,8 @@ public class DoublyLinkedListTest {
         System.out.println("Element at index 3 is: " + (getElement3 != null ? getElement3.getValue() : null));
         System.out.println("Element at index 4 is: " + (getElement4 != null ? getElement4.getValue() : null));
         System.out.println("Element at index 5 is: " + (getElement5 != null ? getElement5.getValue() : null));
+
+        System.out.println("Status of setting the value 4 for index 0 " + doublyLinkedList4.set(4, 0));
+        doublyLinkedList4.printList();
     }
 }
