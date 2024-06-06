@@ -35,5 +35,18 @@ public class DoublyLinkedListTest {
         doublyLinkedList3.prepend(4);
         doublyLinkedList3.getLength();
         doublyLinkedList3.printList();
+
+        DoublyLinkedList.Node deletedNode5 = doublyLinkedList3.deleteFirst();
+        DoublyLinkedList.Node deletedNode6 = doublyLinkedList3.deleteFirst();
+        DoublyLinkedList.Node deletedNode7 = doublyLinkedList3.deleteFirst();
+        DoublyLinkedList.Node deletedNode8 = doublyLinkedList3.deleteFirst();
+        DoublyLinkedList.Node deletedNode9 = doublyLinkedList3.deleteFirst();
+        System.out.println("Deleted element is: " + (deletedNode5 != null ? deletedNode5.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode6 != null ? deletedNode6.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode7 != null ? deletedNode7.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode8 != null ? deletedNode8.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode9 != null ? deletedNode9.getValue() : null));
+        doublyLinkedList2.getLength();
+        doublyLinkedList2.printList();
     }
 }
