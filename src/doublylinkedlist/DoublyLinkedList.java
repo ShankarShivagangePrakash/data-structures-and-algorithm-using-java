@@ -58,5 +58,20 @@ public class DoublyLinkedList {
         System.out.println("\n");
     }
 
+    public void append(int value){
+        Node node = new Node(value);
+
+        // For empty linked list.
+        if(length == 0){
+            head = node;
+            tail = node;
+        } else {
+            node.prev = tail;
+            tail.next = node;
+            tail = node;
+        }
+        length++;
+    }
+
 
 }

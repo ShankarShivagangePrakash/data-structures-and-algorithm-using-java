@@ -10,5 +10,11 @@ public class DoublyLinkedListTest {
         doublyLinkedList1.getLength();
         doublyLinkedList1.printList();
 
+        DoublyLinkedList doublyLinkedList2 = new DoublyLinkedList();
+        doublyLinkedList2.append(1);
+        doublyLinkedList2.append(2);
+        doublyLinkedList2.append(3);
+        doublyLinkedList2.getLength();
+        doublyLinkedList2.printList();
     }
 }
