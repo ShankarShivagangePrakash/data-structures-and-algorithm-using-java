@@ -75,5 +75,14 @@ public class DoublyLinkedListTest {
         doublyLinkedList4.insert(5, 1);
         doublyLinkedList4.insert(7, -1);
         doublyLinkedList4.printList();
+
+        DoublyLinkedList.Node deletedNode10 = doublyLinkedList4.remove(0);;
+        DoublyLinkedList.Node deletedNode11 = doublyLinkedList4.remove(6);
+        DoublyLinkedList.Node deletedNode12 = doublyLinkedList4.remove(3);
+        System.out.println("Deleted element is: " + (deletedNode10 != null ? deletedNode10.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode11 != null ? deletedNode11.getValue() : null));
+        System.out.println("Deleted element is: " + (deletedNode12 != null ? deletedNode12.getValue() : null));
+        doublyLinkedList4.printList();
+
     }
 }
