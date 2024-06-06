@@ -48,5 +48,24 @@ public class DoublyLinkedListTest {
         System.out.println("Deleted element is: " + (deletedNode9 != null ? deletedNode9.getValue() : null));
         doublyLinkedList2.getLength();
         doublyLinkedList2.printList();
+
+        DoublyLinkedList doublyLinkedList4 = new DoublyLinkedList();
+        doublyLinkedList4.prepend(1);
+        doublyLinkedList4.prepend(2);
+        doublyLinkedList4.prepend(3);
+        doublyLinkedList4.prepend(4);
+        doublyLinkedList4.prepend(5);
+        doublyLinkedList4.getLength();
+        doublyLinkedList4.printList();
+        DoublyLinkedList.Node getElement1 = doublyLinkedList4.get(-1);
+        DoublyLinkedList.Node getElement2 = doublyLinkedList4.get(0);
+        DoublyLinkedList.Node getElement3 = doublyLinkedList4.get(3);
+        DoublyLinkedList.Node getElement4 = doublyLinkedList4.get(4);
+        DoublyLinkedList.Node getElement5 = doublyLinkedList4.get(5);
+        System.out.println("Element at index -1 is: " + (getElement1 != null ? getElement1.getValue() : null));
+        System.out.println("Element at index 0 is: " + (getElement2 != null ? getElement2.getValue() : null));
+        System.out.println("Element at index 3 is: " + (getElement3 != null ? getElement3.getValue() : null));
+        System.out.println("Element at index 4 is: " + (getElement4 != null ? getElement4.getValue() : null));
+        System.out.println("Element at index 5 is: " + (getElement5 != null ? getElement5.getValue() : null));
     }
 }
