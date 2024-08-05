@@ -16,5 +16,14 @@ public class BinarySearchTreeTest {
 
         System.out.println(" Binary Search tree root node after insert(): " + binarySearchTree.root.getValue());
 
+        System.out.println(" Binary Search tree contains 47? " + binarySearchTree.contains(47));
+        System.out.println(" Binary Search tree contains 76? " + binarySearchTree.contains(76));
+        System.out.println(" Binary Search tree contains 18? " + binarySearchTree.contains(18));
+        System.out.println(" Binary Search tree contains 52? " + binarySearchTree.contains(52));
+        System.out.println(" Binary Search tree contains 82? " + binarySearchTree.contains(82));
+        System.out.println(" Binary Search tree contains 21? " + binarySearchTree.contains(21));
+        // Not present in the tree, expecting false.
+        System.out.println(" Binary Search tree contains 25? " + binarySearchTree.contains(25));
+
     }
 }

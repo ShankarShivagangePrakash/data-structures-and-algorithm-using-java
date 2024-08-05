@@ -42,6 +42,27 @@ public class BinarySearchTree {
         }
     }
 
+    public boolean contains(int value){
+        Node temp = root;
+        while (temp != null) {
+            // If search node value is less than current node, move to left subtree.
+            if (value < temp.value){
+                temp = temp.left;
+            }
+            // If search node value is greater than current node, move to right subtree.
+            else if (value > temp.value){
+                temp = temp.right;
+            }
+            // this case refers to search node value is equal to current node value, found - so return true.
+            else{
+                return true;
+            }
+        }
+        // if we come out of while loop means, we have not found the element, so return false.
+        // This will handle, if the tree is empty. In that case while loop will not execute - so it will execute next line and returns false.
+        return false;
+    }
+
     class Node{
         private int value;
         private Node left;
