@@ -6,5 +6,14 @@ public class HashTableTest {
         HashTable hashTable  = new HashTable();
 
         hashTable.printHashTable();
+
+        hashTable.set("nails", 100);
+        hashTable.set("tile", 50);
+        hashTable.set("lumber", 80);
+        hashTable.set("bolts", 200);
+        hashTable.set("screws", 140);
+
+        // print hash table after adding elements to it.
+        hashTable.printHashTable();
     }
 }
