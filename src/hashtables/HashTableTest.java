@@ -15,5 +15,8 @@ public class HashTableTest {
 
         // print hash table after adding elements to it.
         hashTable.printHashTable();
+
+        System.out.println("Element `nails` present? " + hashTable.get("nails"));
+        System.out.println("Element `bomb` present? " + hashTable.get("bomb"));
     }
 }

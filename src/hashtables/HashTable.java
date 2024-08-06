@@ -53,6 +53,26 @@ public class HashTable {
         }
     }
 
+    public int get(String key){
+        int index = hashFunction(key);
+        // if no element present at the index, element not present = return 0
+        if(dataMap[index] == null){
+            return 0;
+        } else{
+            Node temp = dataMap[index];
+            // iterate through every element in the list at hash value index.
+            while (temp != null){
+                // if the key we are searching is found in the list, return value.
+                if(temp.key.equalsIgnoreCase(key)){
+                    return temp.value;
+                }
+                temp = temp.next;
+            }
+        }
+        // If we are reaching this point means, we have not found the key in hash table, so return 0
+        return 0;
+    }
+
 
     public void printHashTable(){
         for(int i = 0; i < dataMap.length; i++){
