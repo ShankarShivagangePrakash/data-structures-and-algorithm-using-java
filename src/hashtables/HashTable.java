@@ -1,5 +1,7 @@
 package hashtables;
 
+import java.util.ArrayList;
+
 public class HashTable {
 
     // size of the array which represents hash table
@@ -71,6 +73,19 @@ public class HashTable {
         }
         // If we are reaching this point means, we have not found the key in hash table, so return 0
         return 0;
+    }
+
+    public ArrayList<String> keys(){
+        ArrayList<String> allKeys = new ArrayList<>();
+
+        for(int i = 0; i < dataMap.length; i++){
+            Node temp = dataMap[i];
+            while(temp != null){
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 
 

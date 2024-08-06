@@ -18,5 +18,7 @@ public class HashTableTest {
 
         System.out.println("Element `nails` present? " + hashTable.get("nails"));
         System.out.println("Element `bomb` present? " + hashTable.get("bomb"));
+
+        System.out.println("List of keys in hash table: " + hashTable.keys());
     }
 }
