@@ -22,6 +22,20 @@ public class Graph {
         return false;
     }
 
+    public boolean addEdge(String vertex1, String vertex2){
+        // we have to make sure that both the vertices exist
+        if(adjacencyList.get(vertex1) != null && adjacencyList.get(vertex2) != null){
+            /* Now get the adjacency list for each vertex then add other vertex which represnts edge
+             For example, you want to add edge between A and B
+             Get adjacency list of A, to that list add B
+             similarly get Adjacency list for B, add A to that list*/
+            adjacencyList.get(vertex1).add(vertex2);
+            adjacencyList.get(vertex2).add(vertex1);
+            return true;
+        }
+        return false;
+    }
+
     public void printGraph(){
         System.out.println(adjacencyList);
     }
