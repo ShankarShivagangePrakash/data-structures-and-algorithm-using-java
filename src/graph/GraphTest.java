@@ -8,13 +8,15 @@ public class GraphTest {
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
+        graph.addVertex("D");
 
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
-        graph.addEdge("C", "B");
+        graph.addEdge("A", "D");
+        graph.addEdge("B", "D");
+        graph.addEdge("C", "D");
 
-        graph.removeEdge("A", "B");
-
+        graph.removeVertex("D");
         graph.printGraph();
     }
 }

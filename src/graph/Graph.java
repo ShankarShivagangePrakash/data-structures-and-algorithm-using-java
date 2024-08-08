@@ -50,6 +50,24 @@ public class Graph {
         return false;
     }
 
+    public boolean removeVertex(String vertex){
+        // If vertex doesn't exist then return false
+        if(adjacencyList.get(vertex) == null) return false;
+
+        /* Loop through every vertex's adjacency list which has edge with the vertex to be deleted
+         Iterate through every vertex which has edge with the vertex to be deleted
+         Example: you want to delete vertex D, but it has edge with A and C
+         then loop A and C */
+        for (String otherVertex : adjacencyList.get(vertex)) {
+            // From those other vertices' adjacency list remove the vertex to tbe deleted - this will remove the edge.
+            adjacencyList.get(otherVertex).remove(vertex);
+        }
+        // remove the adjacency list and vertex we want to delete
+        // means vertex D, and it's adjacency list.
+        adjacencyList.remove(vertex);
+        return true;
+    }
+
     public void printGraph(){
         System.out.println(adjacencyList);
     }
