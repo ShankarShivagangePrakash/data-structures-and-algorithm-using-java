@@ -55,10 +55,71 @@ public class Heap {
             // again same while loop executes.
             current = parent(current);
         }
-
-
-
     }
 
+    // Remove method of heap, will always remove top element
+    // we cannot delete any other element of our choice,
+    // so we don't need to pass any index as arguments to this method.
+    public Integer remove(){
+        // If heap is empty, then return null. We don't have anything to delete.
+        if(heap.size() == 0){
+            return null;
+        }
+        // If heap has only one element, remove that element from the arrayList and return
+        if(heap.size() == 1){
+            return heap.remove(0);
+        }
+
+        // If heap has two or more elements, below section will be executed
+        // store the top element in a temp variable, which we are going to return from this method
+        int maxValue = heap.get(0);
+        // Now replace top element with the right most leaf element of the heap
+        // or in other words, replace array[0] with array[last element]
+        heap.set(0, heap.remove(heap.size() - 1));
+        // After you moved last element to top of the heap, now you have restructured to maintain min heap or max heap property.
+        // That will be done using sinkDown()
+        sinkDown(0);
+
+        return maxValue;
+    }
+
+    private void sinkDown(int index){
+        // maxIndex points to location which is greatest of current element and its children
+        // initially we assign maxIndex same as index. In this case both maxIndex and index will be 0
+        int maxIndex = index;
+
+        while (true){
+            // we get left and right children index.
+            int leftIndex = leftChild(index);
+            int rightIndex = rightChild(index);
+
+            /* If left child value is greater than the value at maxIndex, then we set leftIndex as maxIndex
+             similarly, if right child is greater than the value at the maxIndex, then maxIndex will be rightIndex.
+             But note, for last elements in the array,
+             children won't exist, but leftChild() and rightChild() methods might still return some index value which doesn't exist
+             So we perform this check, if leftIndex or right Index really exists in the heap
+             that is leftIndex < heap.size()  or rightIndex < heap.size() - then only perform comparison*/
+            if(leftIndex < heap.size() && heap.get(leftIndex) > heap.get(maxIndex)){
+                maxIndex = leftIndex;
+            }
+            if (rightIndex < heap.size() && heap.get(rightIndex) > heap.get(maxIndex)) {
+                maxIndex = rightIndex;
+            }
+
+            // If maxIndex has updated means, it has found index of its children which is greater that parent
+            // In such case, we have to swap parent and child (child at the index of maxIndex)
+            if(maxIndex != index){
+                swap(index, maxIndex);
+                /* After swapping parent and child, now control should move to child location
+                 again we should continue that comparison with its child
+                 so set index = maxIndex*/
+                index = maxIndex;
+            } else{
+                // If maxIndex is equal to Index means, it has not found any child having value greater than it
+                // so stop restructuring heap and return control.
+                return;
+            }
+        }
+    }
 
 }
